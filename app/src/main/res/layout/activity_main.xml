@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0A0F10">
+
+    <com.castiq.render.CastGLSurfaceView
+        android:id="@+id/glView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="380dp"
+        android:background="#111A1C">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CASTIQ 3D — STAGE 1 MEASUREMENT ENGINE"
+                android:textColor="#2DD4BF"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:layout_marginBottom="10dp" />
+
+            <TextView android:text="Calibration" android:textColor="#DFE9EA" android:textStyle="bold"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="4dp">
+                <Button android:id="@+id/btnCalibrateMode" android:text="Tap 2 pts"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <EditText android:id="@+id/editCalMm" android:hint="mm" android:inputType="numberDecimal"
+                    android:layout_width="80dp" android:layout_height="wrap_content" android:layout_marginStart="8dp" />
+                <Button android:id="@+id/btnSetCal" android:text="Set"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" />
+            </LinearLayout>
+            <TextView android:id="@+id/txtCalStatus" android:text="Not calibrated" android:textColor="#8BA0A2"
+                android:textSize="12sp" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" />
+
+            <TextView android:text="Landmarks" android:textColor="#DFE9EA" android:textStyle="bold"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" />
+            <Spinner android:id="@+id/spinnerLandmarkType" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+            <Button android:id="@+id/btnPlaceLandmark" android:text="Place Landmark (tap model)"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+            <TextView android:id="@+id/txtLandmarks" android:textColor="#8BA0A2" android:textSize="12sp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" />
+
+            <TextView android:text="Axis &amp; Angle" android:textColor="#DFE9EA" android:textStyle="bold"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <Spinner android:id="@+id/spinnerAxisA1" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" />
+                <Spinner android:id="@+id/spinnerAxisA2" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <Spinner android:id="@+id/spinnerAxisB1" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" />
+                <Spinner android:id="@+id/spinnerAxisB2" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <Spinner android:id="@+id/spinnerPlane" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp">
+                <EditText android:id="@+id/editTarget" android:hint="target °" android:inputType="numberSigned|numberDecimal"
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" />
+                <EditText android:id="@+id/editTolerance" android:hint="tol ±°" android:inputType="numberDecimal"
+                    android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginStart="6dp" />
+            </LinearLayout>
+            <Button android:id="@+id/btnComputeAngle" android:text="Compute Angle"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+
+            <TextView android:text="Distance" android:textColor="#DFE9EA" android:textStyle="bold"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <Spinner android:id="@+id/spinnerDistFrom" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" />
+                <Spinner android:id="@+id/spinnerDistTo" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <Button android:id="@+id/btnComputeDistance" android:text="Compute Distance"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+
+            <TextView android:text="Results" android:textColor="#DFE9EA" android:textStyle="bold"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" />
+            <TextView android:id="@+id/txtResults" android:textColor="#2DD4BF" android:textSize="12sp"
+                android:fontFamily="monospace" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+
+            <Button android:id="@+id/btnSaveScan" android:text="Save Scan (JSON)"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" />
+            <Button android:id="@+id/btnResetView" android:text="Reset View"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

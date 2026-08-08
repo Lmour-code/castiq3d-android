@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.CastIQ" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#2DD4BF</item>
+        <item name="colorPrimaryDark">#0A0F10</item>
+        <item name="colorAccent">#2DD4BF</item>
+        <item name="android:windowBackground">#0A0F10</item>
+    </style>
+</resources>
